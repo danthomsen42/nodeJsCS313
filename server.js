@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 app.use(express.static('public'))
+const PORT = process.env.PORT || 5000;
 
 
 app.set('views', __dirname + "/views");
@@ -21,8 +22,8 @@ app.get("/tacos", function (req, res) {
     });
 });
 
-app.listen(8888, function () {
-    console.log("Listening on port 5000");
+app.listen(PORT, function () {
+    console.log("Listening on port " + PORT);
 });
 
 app.get("/math", function (req, res) {
